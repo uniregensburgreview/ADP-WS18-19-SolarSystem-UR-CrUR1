@@ -1,0 +1,18 @@
+Definieren Sie zwei (nicht-)statische Klassen Planet und SolarSystem, die Daten für einzelne Planeten bzw. das ganze Sonnensystem verwalten:
+
+Gemischt statische und nicht-statische Klasse Planet:
+- zwei private statische Attribute int TotalPlanets und int TotalMoons, die die Anzahl Planeten-Instanzen bzw. Planeten-Monde mitzählen;
+- zwei öffentliche statische Methoden int GetTotalPlanets() und int GetTotalMoons(), die die Anzahl Planeten bzw. Monde nach außen zurückliefern;
+
+Statischer Klassenkonstruktor, in dem die beiden statischen Attribute TotalPlanets und TotalMoons initialisiert werden;
+- vier private nicht-statische Attribute string Name für den Planetennamen, int Moons für die Anzahl Monde des Planeten, boole IsDwarfPlanet für den Planetenstatus als Zwergplanet, boole HasRings für den Status des Planeten als Ringplanet (= Gasplanet in unserem Sonnensystem);
+- zwei öffentliche Instanzkonstruktoren mit und ohne Initialisie-rungsdaten für alle nicht-statischen Attribute, wobei der para-meterlose Konstruktor den parametrisierten mit den Initial-daten "", 0, false und false nutzen muss;
+- öffentliche nicht-statische Methode ToText(), die folgenden Datenstring erzeugt: "Name: <Planetenname>\tMoons: <Anzahl-Monde>\tDwarf: <Zwergplaneten-Status>\t Rings: <Ringe-Status>" (für <…> sind die echten Planeten-daten einzusetzen; bitte Leerzeichen hinter ':' beachten!).
+
+Nicht-statische Klasse SolarSystem:
+- privates konstantes Attribut int MaxPlanets mit dem Initialwert 9;
+- privates Array Planet[] Planets der Größe MaxPlanets für alle (klassischen) (Zwerg-)Planeten unseres Sonnen-systems;
+- öffentliche Methode Planet[] GetPlanets(), die das private Planet-Array nach außen zugänglich macht;
+- öffentlicher Instanzkonstruktur, in dem das Planet-Array via CreatePlanets() initialisiert, d. h. mit den kon-kreten Planetendaten befüllt, werden soll;
+- private Prozedur void CreatePlanets(), in der alle neun Planeten-Instanzen via DefinePlanet(…) mit dem fortlaufenden Index (0 = Mercury bis 8 = Pluto) erzeugt und im Planet-Array an der entsprechenden Stelle gespeichert werden;
+- private Prozedur void DefinePlanet(int X, Planet _Planet), die eine Planeteninstanz im Planet-Array an Index X einträgt (Originalreihenfolge der Planeten).
